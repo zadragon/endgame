@@ -1,7 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import LoginPage from "@/views/LoginPage.vue";
-// import SignupPage from "@/views/SignupPage.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +22,11 @@ export default new VueRouter({
       path: "/main",
       component: () => import("@/views/MainPage.vue"),
     },
+    {
+      path: "/add",
+      component: () => import("@/views/PostAddPage.vue"),
+    },
+    { path: "/post/:id", component: () => import("@/views/postEditPage.vue") },
     {
       path: "*",
       component: () => import("@/views/NotFoundPage.vue"),
